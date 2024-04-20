@@ -95,3 +95,37 @@ Find the Questions :
         
        
         return s;
+6.  if(a[0]=='0' && b[0]=='0'){
+            return "0";
+        }
+       int c=0;
+       string ans="";
+       int sum=0;
+       int j=b.size()-1;
+       int i=a.size()-1;
+       while(i>=0 || j>=0){
+        sum=c;
+            
+        if(i>=0){
+                sum+=a[i]-48;
+            i--;
+        }
+
+        if(j>=0){
+            sum+=b[j]-48;
+            j--;
+        }
+
+        if(sum%2){
+            ans+='1';
+        }
+        else{
+            ans+='0';
+        }
+        (sum>1)?c=1:c=0;
+       }
+       if(c){
+        ans+='1';
+       }
+     reverse(ans.begin(),ans.end());
+     return ans;
